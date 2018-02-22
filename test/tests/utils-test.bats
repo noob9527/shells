@@ -27,3 +27,10 @@ source $PROJECT_DIR/src/index.sh
     assert_equal "$(shells::get_os 'darwin')" 'OSX'
     assert_equal "$(shells::get_os 'linux')" 'LINUX'
 }
+
+@test 'shells::get_external_ip' {
+    skip 'I have no idea how to mock input yet'
+    run shells::get_external_ip
+    assert_output -e '([0-9]{1,3}\.?){4}'
+}
+

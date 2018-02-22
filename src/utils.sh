@@ -19,3 +19,7 @@ shells::get_os() {
     *)        echo "unknown: $os_str" ;;
   esac
 }
+
+shells::get_external_ip() {
+  echo $(dig +short myip.opendns.com @resolver1.opendns.com)
+}
